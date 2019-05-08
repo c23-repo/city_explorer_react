@@ -9,18 +9,4 @@ const Header = () => {
   );
 };
 
-
-
-
-class App extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <Main />
-      </React.Fragment>
-    );
-  }
-}
-
-export default App;
+export default Header;
