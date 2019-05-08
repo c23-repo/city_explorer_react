@@ -9,10 +9,11 @@ class Main extends React.Component {
       <React.Fragment>
         <Search />
         <Map />
-        <Result />
-        <Result />
-        <Result />
-        <Result />
+        <Result apiName={'Dark Sky API'}/>
+        <Result apiName={'Yelp API'}/>
+        <Result apiName={'Eventbrite API'}/>
+        <Result apiName={'Movie DB API'}/>
+        <Result apiName={'Hiking Project API'}/>
       </React.Fragment>
     );
   }
