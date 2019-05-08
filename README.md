@@ -1,3 +1,14 @@
+## Features
+Number and name of feature: Feature 1 
+
+Estimate of time needed to complete: 60 min
+
+Start time: 10:00
+
+Finish time: 11:30
+
+Actual time needed to complete: 90 min
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
