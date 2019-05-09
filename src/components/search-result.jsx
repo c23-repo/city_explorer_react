@@ -1,14 +1,14 @@
 import React from 'react';
-import Search from './search';
-import Map from './map';
-import Result from './result';
+import Result from './result.jsx';
 
-class Main extends React.Component {
+class SearchResult extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <React.Fragment>
-        <Search />
-        <Map />
         <Result apiName={'Dark Sky API'}/>
         <Result apiName={'Yelp API'}/>
         <Result apiName={'Eventbrite API'}/>
@@ -19,4 +19,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default SearchResult;
