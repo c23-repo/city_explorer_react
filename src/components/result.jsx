@@ -1,5 +1,10 @@
 import React from 'react';
 import superagent from 'superagent';
+import Darksky from './api_components/darksky.jsx';
+import Yelp from './api_components/yelp.jsx';
+import Eventbrite from './api_components/eventbrite.jsx';
+import Imdb from './api_components/imdb.jsx';
+import Hikingproject from './api_components/hikingproject.jsx';
 
 class Result extends React.Component {
   constructor(props) {
@@ -10,6 +15,15 @@ class Result extends React.Component {
     };
   }
 
+  components = {
+    weather: Darksky,
+    yelp: Yelp,
+    events: Eventbrite,
+    movies: Imdb,
+    hikingproject: Hikingproject
+
+  };
+
   componentDidUpdate(){
     if(this.props.location.id !== this.state.locationID){
       this.fetchData();
@@ -18,27 +32,16 @@ class Result extends React.Component {
 
   fetchData = async () => {
     if(Object.entries(this.props.location).length !== 0 && this.props.location.constructor === Object){
-      let data = await superagent.get(this.props.backendURL+this.props.queryType).query({data: this.props.location});
+      let data = await superagent.get(this.props.backendURL+'/'+this.props.pathCompKey).query({data: this.props.location});
       this.setState((state, props) =>{
-        return {weatherData: data.body, locationID: this.props.location.id};
+        return {apiData: data.body, locationID: this.props.location.id};
       })
     }
   }
 
   render() {
-    let renderedContent = this.state.apiData.map((data, idx) => (
-      //SOME FUNCTION CALL TO API
-      <li key={idx}>The forecast for { weather.time } is: { weather.forecast }</li>
-    ));
-    return(
-      <section>
-        <h3>Results from the {this.props.apiName}</h3>
-        {/* THIS WOULD BE PART OF FUNCTION AS WELL */}
-        <ul className="weather-results">
-          {renderedContent}
-        </ul>
-      </section>
-    );
+    const TagName = this.components[this.props.pathCompKey];
+    return <TagName {...this.state}/>;
   }
 }
 

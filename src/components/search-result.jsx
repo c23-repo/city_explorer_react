@@ -1,18 +1,19 @@
 import React from 'react';
-import Darksky from './api_components/darksky.jsx'
-import Yelp from './api_components/yelp.jsx'
-import Eventbrite from './api_components/eventbrite.jsx'
-import Imdb from './api_components/imdb.jsx'
-import Hikingproject from './api_components/hikingproject.jsx'
+import Result from './result.jsx';
+import Darkstylestateless from './api_components/darkskystateless.jsx'
+
 
 const SearchResult = (props) => {
   return (
     <React.Fragment>
-      <Darksky location={props.location} backendURL={props.backendURL}/>
-      <Yelp location={props.location} backendURL={props.backendURL}/>
-      <Eventbrite location={props.location}  backendURL={props.backendURL}/>
-      <Imdb location={props.location} backendURL={props.backendURL}/>
-      <Hikingproject location={props.location} backendURL={props.backendURL}/>
+      <div className="column-container">
+        <Result {...props} pathCompKey='weather' />
+        <Result {...props} pathCompKey='yelp' />
+        <Result {...props} pathCompKey='events' />
+        <Result {...props} pathCompKey='movies' />
+        <Result {...props} pathCompKey='hikingproject' />
+        {/* <Darkstylestateless {...props} /> */}
+      </div>
     </React.Fragment>
   );
 }
