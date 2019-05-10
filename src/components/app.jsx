@@ -21,9 +21,11 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <SearchForm updateLocation={this.updateLocation} backendURL={this.state.backendURL} />
-        <Map location={this.state.location}/>
-        <SearchResults location={this.state.location} backendURL={this.state.backendURL}/>
+        <main>
+          <SearchForm updateLocation={this.updateLocation} backendURL={this.state.backendURL} />
+          <Map location={this.state.location}/>
+          <SearchResults location={this.state.location} backendURL={this.state.backendURL}/>
+        </main>
       </React.Fragment>
     );
   }
