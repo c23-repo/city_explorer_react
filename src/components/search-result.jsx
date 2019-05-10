@@ -11,7 +11,7 @@ const SearchResult = (props) => {
         <Result {...props} pathCompKey='yelp' />
         <Result {...props} pathCompKey='events' />
         <Result {...props} pathCompKey='movies' />
-        <Result {...props} pathCompKey='hikingproject' />
+        <Result {...props} pathCompKey='trails' />
         {/* <Darkstylestateless {...props} /> */}
       </div>
     </React.Fragment>

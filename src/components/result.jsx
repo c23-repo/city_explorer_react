@@ -20,7 +20,7 @@ class Result extends React.Component {
     yelp: Yelp,
     events: Eventbrite,
     movies: Imdb,
-    hikingproject: Hikingproject
+    trails: Hikingproject
 
   };
 
@@ -31,8 +31,10 @@ class Result extends React.Component {
   }
 
   fetchData = async () => {
-    if(Object.entries(this.props.location).length !== 0 && this.props.location.constructor === Object){
-      let data = await superagent.get(this.props.backendURL+'/'+this.props.pathCompKey).query({data: this.props.location});
+    if(Object.entries(this.props.location).length !== 0){
+      let data = await superagent
+      .get(this.props.backendURL+'/'+this.props.pathCompKey)
+      .query({data: this.props.location});
       this.setState((state, props) =>{
         return {apiData: data.body, locationID: this.props.location.id};
       })
