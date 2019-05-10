@@ -18,7 +18,8 @@ class SearchForm extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     // API call
-    let data = await superagent.get(`https://stark-tor-84880.herokuapp.com/location?data=${this.state.query}`);
+
+    let data = await superagent.get(`${this.props.backendURL}/location?data=${this.state.query}`);
     let location = data.body;
     // Update App state
     this.props.updateLocation(location);

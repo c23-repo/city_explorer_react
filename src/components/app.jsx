@@ -8,8 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: {
-      }
+      location: {},
+      backendURL: 'https://stark-tor-84880.herokuapp.com'
     };
   }
 
@@ -21,9 +21,9 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <SearchForm updateLocation={this.updateLocation}/>
+        <SearchForm updateLocation={this.updateLocation} backendURL={this.state.backendURL} />
         <Map location={this.state.location}/>
-        <SearchResults location={this.state.location}/>
+        <SearchResults location={this.state.location} backendURL={this.state.backendURL}/>
       </React.Fragment>
     );
   }
