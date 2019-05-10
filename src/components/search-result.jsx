@@ -1,22 +1,20 @@
 import React from 'react';
-import Result from './result.jsx';
+import Darksky from './api_components/darksky.jsx'
+import Yelp from './api_components/yelp.jsx'
+import Eventbrite from './api_components/eventbrite.jsx'
+import Imdb from './api_components/imdb.jsx'
+import Hikingproject from './api_components/hikingproject.jsx'
 
-class SearchResult extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <Result apiName={'Dark Sky API'}/>
-        <Result apiName={'Yelp API'}/>
-        <Result apiName={'Eventbrite API'}/>
-        <Result apiName={'Movie DB API'}/>
-        <Result apiName={'Hiking Project API'}/>
-      </React.Fragment>
-    );
-  }
+const SearchResult = (props) => {
+  return (
+    <React.Fragment>
+      <Darksky location={props.location} backendURL={props.backendURL}/>
+      <Yelp location={props.location} backendURL={props.backendURL}/>
+      <Eventbrite location={props.location}  backendURL={props.backendURL}/>
+      <Imdb location={props.location} backendURL={props.backendURL}/>
+      <Hikingproject location={props.location} backendURL={props.backendURL}/>
+    </React.Fragment>
+  );
 }
 
 export default SearchResult;
