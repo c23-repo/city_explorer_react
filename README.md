@@ -13,11 +13,11 @@ Number and name of feature: Feature 2
 
 Estimate of time needed to complete: 120 min
 
-Start time: 10:00
+Start time: 10:00AM
 
-Finish time: ?
+Finish time: 11:00PM
 
-Actual time needed to complete: ?
+Actual time needed to complete: 360 min
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
