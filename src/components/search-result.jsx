@@ -1,5 +1,6 @@
 import React from 'react';
 import Result from './result.jsx';
+import Darkstylestateless from './api_components/darkskystateless.jsx'
 
 
 const SearchResult = (props) => {
@@ -11,6 +12,7 @@ const SearchResult = (props) => {
         <Result {...props} pathCompKey='events' />
         <Result {...props} pathCompKey='movies' />
         <Result {...props} pathCompKey='hikingproject' />
+        {/* <Darkstylestateless {...props} /> */}
       </div>
     </React.Fragment>
   );
