@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Darksky = (props) => {
-  console.log(props);
   let renderedContent = props.apiData.map((weather, idx) => (
     <li key={idx}>The forecast for { weather.time } is: { weather.forecast }</li>
   ));
