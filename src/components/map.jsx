@@ -6,7 +6,7 @@ const Map = (props) => {
   &key=${process.env.REACT_APP_GEOCODE_API_KEY}`;
   
   return (
-      <img id="map" className="hide" src={`${mapURL}`} alt="Map of search query" />
+      <img id="map" src={`${mapURL}`} alt="Map of search query" />
   );
 }
 
